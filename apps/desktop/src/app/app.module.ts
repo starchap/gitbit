@@ -4,22 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {MatIconModule} from '@angular/material/icon'; 
-import {MatTabsModule} from '@angular/material/tabs'; 
-import {MatToolbarModule} from '@angular/material/toolbar'; 
-import {MatBadgeModule} from '@angular/material/badge'; 
-
+import {DesktopTabMenuFeatureModule} from '../../../../libs/desktop/tab-menu/feature/src/lib/desktop-tab-menu-feature.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     BrowserAnimationsModule,
-    MatIconModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatBadgeModule
+    DesktopTabMenuFeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
