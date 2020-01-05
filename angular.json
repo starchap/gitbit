@@ -25,7 +25,9 @@
               "apps/desktop/src/favicon.ico",
               "apps/desktop/src/assets"
             ],
-            "styles": ["apps/desktop/src/styles.scss"],
+            "styles": [
+              "apps/desktop/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,7 +86,10 @@
               "apps/desktop/tsconfig.app.json",
               "apps/desktop/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/desktop/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/desktop/**"
+            ]
           }
         },
         "test": {
@@ -118,8 +123,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/desktop-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/desktop-e2e/**"]
+            "tsConfig": [
+              "apps/desktop-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/desktop-e2e/**"
+            ]
           }
         }
       }
@@ -150,11 +160,15 @@
               {
                 "glob": "**/*",
                 "input": "apps/electron-electron-app/src/",
-                "ignore": ["**/*.ts"],
+                "ignore": [
+                  "**/*.ts"
+                ],
                 "output": ""
               }
             ],
-            "styles": ["apps/desktop/src/styles.scss"],
+            "styles": [
+              "apps/desktop/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -238,7 +252,7 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nstudio/xplat"
   },
   "schematics": {
     "@nrwl/angular:application": {
