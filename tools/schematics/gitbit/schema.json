@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "gitbit",
+  "type": "object",
+  "properties": {
+    "app": {
+      "type": "string",
+      "enum": ["GitBit", "Electron"],
+      "x-prompt": "What application are you generating for?"
+    },
+    "libraryType": {
+      "type": "string",
+      "enum": ["Data-access", "library", "Typings", "Utils", "Feature"],
+      "x-prompt": "What type of library are you generating for?"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["Component", "Service", "Module", "library"],
+      "x-prompt": "What do you want to generate?"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "x-prompt": "What do you want to generate?"
+    },
+    "libraryName": {
+      "type": "string",
+      "x-prompt": "Specify the name of the library you are generating for? (Required for all except new libraries)"
+    },
+    "route": {
+      "type": "string",
+      "x-prompt": "Specify parent routing module? (Required when generating new features)"
+    }
+  },
+  "required": ["name"]
+}
