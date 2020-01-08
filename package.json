@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
+    "new": "nx workspace-schematic gitbit",
     "start": "npm run postinstall.web && ng serve desktop",
     "build": "npm run postinstall.web && ng build desktop",
     "test": "npm run postinstall.web && ng test",
