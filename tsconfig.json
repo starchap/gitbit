@@ -16,8 +16,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@myworkspace/desktop/tab-menu/feature": [
-        "libs/desktop/tab-menu/feature/src/index.ts"
+      "@gitbit/gitbit/tabmenu/feature": [
+        "libs/gitbit/tabmenu/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/terminal/data-access": [
+        "libs/gitbit/terminal/data-access/src/index.ts"
+      ],
+      "@gitbit/gitbit/terminal/typings": [
+        "libs/gitbit/terminal/typings/src/index.ts"
       ]
     }
   },

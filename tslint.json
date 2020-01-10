@@ -12,7 +12,7 @@
     },
     "forin": true,
     "import-blacklist": [true, "rxjs/Rx"],
-    "interface-over-type-literal": false,
+    "interface-over-type-literal": true,
     "member-access": false,
     "member-ordering": [
       true,

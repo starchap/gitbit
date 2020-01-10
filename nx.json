@@ -1,23 +1,32 @@
 {
-  "npmScope": "myworkspace",
+  "npmScope": "gitbit",
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.json": "*",
     "tslint.json": "*",
     "nx.json": "*"
   },
   "projects": {
-    "desktop-e2e": {
+    "gitbit-e2e": {
       "tags": []
     },
-    "desktop": {
+    "gitbit": {
       "tags": []
     },
-    "electron-electron-app": {
+    "electron-electron": {
       "tags": []
     },
-    "desktop-tab-menu-feature": {
+    "gitbit-tabmenu-feature": {
+      "tags": []
+    },
+    "gitbit-terminal-data-access": {
+      "tags": []
+    },
+    "gitbit-terminal-typings": {
       "tags": []
     }
   }
