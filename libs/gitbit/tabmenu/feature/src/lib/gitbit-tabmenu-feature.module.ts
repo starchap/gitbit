@@ -13,7 +13,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatIconModule,
     MatTabsModule,
     MatToolbarModule,
-    MatBadgeModule],
+    MatBadgeModule
+  ],
   exports: [
     TabmenuComponent
   ],

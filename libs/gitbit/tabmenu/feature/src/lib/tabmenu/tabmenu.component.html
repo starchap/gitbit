@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row class="fadein">
     <span>origin/develop</span>
     <mat-icon class="example-tab-icon">redo</mat-icon>
     <span>Issue-123-making-gitbit</span>
@@ -9,95 +9,22 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-tab-group>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">dashboard</mat-icon>
-      Dashboard
-    </ng-template>
-    Content 1
-  </mat-tab>
 
-  <mat-tab>
+<mat-tab-group  mat-align-tabs="center">
+  <mat-tab *ngFor="let tab of tabs">
     <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">account_tree</mat-icon>
-      Git Tree
-    </ng-template>
-    Content 1
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <p>
-        <mat-icon matBadge="15" matBadgeColor="warn" matBadgePosition="before">beenhere</mat-icon>
-        <span class="cdk-visually-hidden">
-              Example with a home icon with overlaid badge showing the number 15
-            </span>
-      </p>
-      Commit
+      <div class="with-icon fadein">
+        <mat-icon matBadge="{{tab.numberIndicator?tab.numberIndicator:''}}" matBadgeColor="warn" matBadgeSize="small" matBadgePosition="before">
+          {{tab.icon}}
+        </mat-icon>
+        {{tab.title}}
+      </div>
     </ng-template>
 
-    Content 3
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">save</mat-icon>
-      Stashed
+    <ng-template matTabContent>
+      Content 3
     </ng-template>
-    Content 2
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">call_merge</mat-icon>
-      Merge
-    </ng-template>
-    Content 2
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">linear_scale</mat-icon>
-      Rebase
-    </ng-template>
-
-    Content 3
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <p>
-        <mat-icon matBadge="15" matBadgeColor="warn" matBadgePosition="before">error_outline</mat-icon>
-        <span class="cdk-visually-hidden">
-              Example with a home icon with overlaid badge showing the number 15
-            </span>
-      </p>
-      Confilicts
-    </ng-template>
-
-    Content 3
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <p>
-        <mat-icon matBadge="15" matBadgeColor="warn" matBadgePosition="before">assignment</mat-icon>
-        <span class="cdk-visually-hidden">
-              Example with a home icon with overlaid badge showing the number 15
-            </span>
-      </p>
-      Assignments
-    </ng-template>
-
-    Content 3
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">web_asset</mat-icon>
-      Console
-    </ng-template>
-
-    Content 3
   </mat-tab>
 </mat-tab-group>
+
+<footer class="footer">hello</footer>

@@ -26,7 +26,7 @@ $desktop-theme: mat-light-theme($desktop-primary, $desktop-accent, $desktop-warn
 // that you are using.
 @include angular-material-theme($desktop-theme); */
 @import './theme.scss';
-
+@import "./animeation.scss";
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
