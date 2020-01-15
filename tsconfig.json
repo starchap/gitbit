@@ -24,6 +24,12 @@
       ],
       "@gitbit/gitbit/terminal/typings": [
         "libs/gitbit/terminal/typings/src/index.ts"
+      ],
+      "@gitbit/gitbit/tabmenu/typings": [
+        "libs/gitbit/tabmenu/typings/src/index.ts"
+      ],
+      "@gitbit/gitbit/routing/typings": [
+        "libs/gitbit/routing/typings/src/index.ts"
       ]
     }
   },

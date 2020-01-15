@@ -28,6 +28,12 @@
     },
     "gitbit-terminal-typings": {
       "tags": []
+    },
+    "gitbit-tabmenu-typings": {
+      "tags": []
+    },
+    "gitbit-routing-typings": {
+      "tags": []
     }
   }
 }
