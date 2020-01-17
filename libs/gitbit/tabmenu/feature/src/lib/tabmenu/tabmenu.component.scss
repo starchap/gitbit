@@ -1,7 +1,11 @@
-.example-icon {
-  padding: 0 14px;
+.mat-badge-content{
+  margin-bottom: 5px;
 }
-
 .example-spacer {
   flex: 1 1 auto;
+}
+.with-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
