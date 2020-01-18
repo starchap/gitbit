@@ -30,7 +30,12 @@
       ],
       "@gitbit/gitbit/routing/typings": [
         "libs/gitbit/routing/typings/src/index.ts"
-      ]
+      ],
+      "@gitbit/gitbit/tree/feature": ["libs/gitbit/tree/feature/src/index.ts"],
+      "@gitbit/gitbit/git/data-access": [
+        "libs/gitbit/git/data-access/src/index.ts"
+      ],
+      "@gitbit/gitbit/git/typings": ["libs/gitbit/git/typings/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -326,6 +326,88 @@
           "styleext": "scss"
         }
       }
+    },
+    "gitbit-tree-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/tree/feature",
+      "sourceRoot": "libs/gitbit/tree/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/tree/feature/tsconfig.lib.json",
+              "libs/gitbit/tree/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/tree/feature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/tree/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/tree/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/tree/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-git-data-access": {
+      "projectType": "library",
+      "root": "libs/gitbit/git/data-access",
+      "sourceRoot": "libs/gitbit/git/data-access/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/git/data-access/tsconfig.lib.json",
+              "libs/gitbit/git/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/git/data-access/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/git/data-access/jest.config.js",
+            "tsConfig": "libs/gitbit/git/data-access/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/git/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-git-typings": {
+      "projectType": "library",
+      "root": "libs/gitbit/git/typings",
+      "sourceRoot": "libs/gitbit/git/typings/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/gitbit/git/typings/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/git/typings/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

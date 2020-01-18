@@ -1,6 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TreeComponent } from '../../../../tree/feature/src/lib/tree/tree.component';
+import { GitbitTreeFeatureModule } from '@gitbit/gitbit/tree/feature';
 
 // TODO: Delete this components later as the real feature components get implemented
 @Component({
@@ -25,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'tree',
-    component: TempComponent2
+    loadChildren: () => import('@gitbit/gitbit/tree/feature').then(module => module.GitbitTreeFeatureModule)
   }
 ]
 

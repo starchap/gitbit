@@ -1696,7 +1696,7 @@
   dependencies:
     "@nrwl/web" "^8.0.0"
 
-"@nstudio/xplat@^8.1.1":
+"@nstudio/xplat@8.1.1":
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/@nstudio/xplat/-/xplat-8.1.1.tgz#0d3664c58ac08b708d08b08e1f6e34000e27c6da"
   integrity sha512-q0IA3VH4ViIrt8kEPiNkkRrtbv7Qtp5RAw1j4kh7lkxpC/nF+qhrhc7i9OMsu1MDDr3lCOGNBxN5hi619MLw1w==

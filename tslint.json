@@ -4,6 +4,7 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "typedef": [true, "property-declaration","variable-declaration", "member-variable-declaration", "object-destructuring"],
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
@@ -34,7 +35,7 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [true, "ignore-params"],
+    "no-inferrable-types": [false, "ignore-params"],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
