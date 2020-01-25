@@ -1,1 +1,1 @@
-export * from './lib/gitbit-git-data-access.module';
+export * from './lib/git/git.service';
