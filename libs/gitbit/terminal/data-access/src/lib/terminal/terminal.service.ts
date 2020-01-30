@@ -7,12 +7,9 @@ import { ipcRenderer, IpcRendererEvent } from 'electron';
   providedIn: 'root'
 })
 export class TerminalService {
-  write(command: string): Observable<Terminal>{
-    ipcRenderer.send('exec', command);
-    return (new Observable<Terminal>((subscriber:Subscriber<Terminal>) =>{
-      ipcRenderer.on('execRes', (event: IpcRendererEvent, ...arg: any[]) => {
-        subscriber.next(arg[0] as Terminal)
-      });
-    }));
+  async exec(command: string): Promise<Terminal> {
+    return await ipcRenderer.invoke('sync', command).then((result: Terminal) => {
+      return result;
+    })
   }
 }

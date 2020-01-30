@@ -137,13 +137,24 @@ function quit() {
 
 /* tslint:disable */
 function initTerminalListener(){
-  ipcMain.on('exec', (event, arg) => {
+  ipcMain.handle('sync', async (event, arg) => {
+    return new Promise((resolve, reject) => {
+      exec(arg, (error, stdout, stderr) => {
+        if (error) {
+          console.warn(error);
+        }
+        resolve({Error: error, stdOut: stdout, stdErr: stderr});
+      });
+    });
+  });
+
+/*  ipcMain.on('async', (event, arg) => {
     exec(arg, (err: Error, stdout: string | Buffer, stderr: string | Buffer) => {
-      event.sender.send('execRes', {Error: err, stdOut: stdout, stdErr: stderr});
+      event.sender.send('asyncRes', {Error: err, stdOut: stdout, stdErr: stderr});
       if(err){
         return;
       }
     });
-  });
+  });*/
 }
 /* tslint:enable */
