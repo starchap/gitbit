@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { GitService } from '@gitbit/gitbit/git/data-access';
 import { createGitgraph } from '@gitgraph/js';
-import { GitgraphUserApi, GitgraphCommitOptions } from '@gitgraph/core/lib/user-api/gitgraph-user-api';
+import {
+  GitgraphUserApi,
+  GitgraphCommitOptions
+} from '@gitgraph/core/lib/user-api/gitgraph-user-api';
 import { BranchUserApi } from '@gitgraph/core/lib/user-api/branch-user-api';
 import { FlatBranch } from '../../../../../git/typings/src/lib/git.model';
 enum GitAction {
-  COMMIT= 'Committed',
+  COMMIT = 'Committed',
   BRANCHED = 'Branched',
-  MERGED= 'Merged'
+  MERGED = 'Merged'
 }
 @Component({
   selector: 'gb-tree',
@@ -17,96 +20,132 @@ enum GitAction {
 export class TreeComponent implements OnInit {
   branchPaths: Promise<string[]> = this.git.showAllBranches();
 
-  constructor(private git: GitService) {
-  }
+  constructor(private git: GitService) {}
 
   ngOnInit() {
-    this.git.getGitLog().then((a) => {
-      console.log(a);
-      console.log(this.getAllBranchPoints(a));
+    this.git.getGitLog().then(a => {
       this.drawTree(a);
     });
-    /*    const graphContainer: HTMLElement = document.getElementById("graph-container");
-
-    // Instantiate the graph.
-        const gitgraph: GitgraphUserApi<SVGElement> = createGitgraph(graphContainer);
-
-    // Simulate git commands with Gitgraph API.
-        const master: BranchUserApi<SVGElement> = gitgraph.branch("master");
-        master.commit("Initial commit");
-
-        const develop: BranchUserApi<SVGElement> = gitgraph.branch("develop");
-        develop.commit("Add TypeScript");
-        develop.commit("Add TypeScript");
-
-        const aFeature: BranchUserApi<SVGElement> = master.branch("a-feature");
-        develop.commit("Add TypeScript");
-        aFeature
-          .commit("Make it work")
-          .commit({ subject: "Make it right", hash: "test" })
-          .commit("Make it fast");
-
-        master.merge(aFeature);
-        develop.commit("Prepare v1");
-
-        master.merge(develop).tag("v1.0.0");*/
-
   }
 
-
-  getAllBranchPoints(commits: FlatBranch[], elementId: string = 'graph-container'): Map<string, string[]> {
-    const makeBranchesAt: Map<string, string[]> = new Map();
-    commits.forEach((commit: FlatBranch) => {
-      if (commit.parentIds.length === 2) { // a merge has occurred
-        if (makeBranchesAt.get(commit.parentIds[0].id)) { // multiple branched from commit
-          makeBranchesAt.get(commit.parentIds[0].id).push(commit.parentIds[1].id);
-        } else { // first branch to branch from commit
-          makeBranchesAt.set(commit.parentIds[0].id, [commit.parentIds[1].id]);
-        }
-      }
-    });
-    return makeBranchesAt;
-  }
-
-  drawTree(commits: FlatBranch[], elementId: string = 'graph-container'): void {
+  // drawing the gri tree to a specific element in the DOM using it's ID
+  private drawTree(
+    commits: FlatBranch[],
+    elementId: string = 'graph-container'
+  ): void {
     const graphContainer: HTMLElement = document.getElementById(elementId);
-    const gitgraph: GitgraphUserApi<SVGElement> = createGitgraph(graphContainer);
-    const branchPoints: Map<string, string[]> = this.getAllBranchPoints(commits);
-    const parents: Map<string, BranchUserApi<SVGElement>> = new Map();
+    const gitGraph: GitgraphUserApi<SVGElement> = createGitgraph(
+      graphContainer
+    );
+    const branchMap: Map<string, string> = this.getBranchMap(commits);
+    const history: Map<string, BranchUserApi<SVGElement>> = new Map();
+    this.firstCommits(commits, history, gitGraph);
     commits.reverse().forEach((commit: FlatBranch) => {
-      if (commit.parentIds.length === 0) { //first commit
-        parents.set(commit.branchId, gitgraph.branch(commit.branchId)
-          .commit(this.getCommitMessage(commit, GitAction.COMMIT))
-        );
-        commit.parentIds.push({ id: commit.branchId });
-        return;
-      }
-      if (commit.parentIds.length === 2) { // merge
-        parents.set(commit.branchId, parents.get(commit.parentIds[0].id)
-          .merge({branch: parents.get(commit.parentIds[1].id), commitOptions: this.getCommitMessage(commit, GitAction.MERGED)}));
-        return;
-      }
-      if (branchPoints.get(commit.parentIds[0].id)) { // time to make branch
-        parents.set(commit.branchId, parents.get(commit.parentIds[0].id)
-          .branch(commit.branchId)
-          .commit(this.getCommitMessage(commit, GitAction.BRANCHED)));
-        return;
-      }
-      parents.set(commit.branchId, parents.get(commit.parentIds[0].id)
-        .commit(this.getCommitMessage(commit, GitAction.COMMIT)));
-
+      this.newBranch(commit, history, branchMap);
+      this.merge(commit, history);
+      this.commitToHistory(commit, history);
     });
   }
 
+  private getBranchMap(commits: FlatBranch[]): Map<string, string> {
+    return new Map(
+      commits
+        .filter((value: FlatBranch) => value.parentIds.length === 2)
+        .map((value: FlatBranch) => [
+          value.parentIds[0].id,
+          value.parentIds[1].id
+        ])
+    );
+  }
+  // get the initial commits
+  private getStartingCommits(commits: FlatBranch[]): FlatBranch[] {
+    return commits.filter((value: FlatBranch) => value.parentIds[0].id === '');
+  }
 
-  private getCommitMessage(commit: FlatBranch, gitAction: GitAction): GitgraphCommitOptions<SVGElement> {
-    return { hash: commit.branchId,
-      subject: gitAction+': '+commit.message.slice(0,50),
+  // commit the initial commits
+  private firstCommits(
+    commits: FlatBranch[],
+    history: Map<string, BranchUserApi<SVGElement>>,
+    gitGraph: GitgraphUserApi<SVGElement>
+  ): void {
+    this.getStartingCommits(commits).forEach((commit: FlatBranch) => {
+      history.set(
+        commit.branchId,
+        gitGraph
+          .branch(commit.branchId)
+          .commit(this.commitMessage(commit, GitAction.COMMIT))
+      );
+    });
+  }
+
+  // case of commit is in branchMap create new branch
+  private newBranch(
+    commit: FlatBranch,
+    history: Map<string, BranchUserApi<SVGElement>>,
+    branchMap: Map<string, string>
+  ): boolean {
+    if (
+      commit.parentIds[0] &&
+      branchMap.get(commit.parentIds[0].id) &&
+      commit.parentIds.length < 2
+    ) {
+      history.set(
+        commit.branchId,
+        history
+          .get(commit.parentIds[0].id)
+          .branch(commit.branchId)
+          .commit(this.commitMessage(commit, GitAction.BRANCHED))
+      );
+      return true;
+    }
+    return false;
+  }
+
+  // case where multiple parents merge index 2 into index 1
+  private merge(
+    commit: FlatBranch,
+    history: Map<string, BranchUserApi<SVGElement>>
+  ): boolean {
+    if (commit.parentIds.length === 2) {
+      history.set(
+        commit.branchId,
+        history.get(commit.parentIds[0].id).merge({
+          branch: history.get(commit.parentIds[1].id),
+          commitOptions: this.commitMessage(commit, GitAction.MERGED)
+        })
+      );
+      return true;
+    }
+    return false;
+  }
+
+  // perform an normal commit to a given branch using the history map
+  private commitToHistory(
+    commit: FlatBranch,
+    history: Map<string, BranchUserApi<SVGElement>>
+  ): boolean {
+    if (!history.get(commit.branchId) && commit.parentIds.length === 1) {
+      history.set(
+        commit.branchId,
+        history
+          .get(commit.parentIds[0].id)
+          .commit(this.commitMessage(commit, GitAction.COMMIT))
+      );
+      return true;
+    }
+    return false;
+  }
+
+  // Style and make commit messages unique
+  private commitMessage(
+    commit: FlatBranch,
+    gitAction: GitAction
+  ): GitgraphCommitOptions<SVGElement> {
+    return {
+      hash: commit.branchId,
+      subject: gitAction + ': ' + commit.message.slice(0, 50),
       body: commit.message,
       author: commit.author
-    }
+    };
   }
-
 }
-
-

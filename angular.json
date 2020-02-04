@@ -21,8 +21,13 @@
             "polyfills": "apps/gitbit/src/polyfills.ts",
             "tsConfig": "apps/gitbit/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/gitbit/src/favicon.ico", "apps/gitbit/src/assets"],
-            "styles": ["apps/gitbit/src/styles.scss"],
+            "assets": [
+              "apps/gitbit/src/favicon.ico",
+              "apps/gitbit/src/assets"
+            ],
+            "styles": [
+              "apps/gitbit/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,7 +86,10 @@
               "apps/gitbit/tsconfig.app.json",
               "apps/gitbit/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/gitbit/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/gitbit/**"
+            ]
           }
         },
         "test": {
@@ -115,8 +123,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/gitbit-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/gitbit-e2e/**"]
+            "tsConfig": [
+              "apps/gitbit-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/gitbit-e2e/**"
+            ]
           }
         }
       }
@@ -147,11 +160,15 @@
               {
                 "glob": "**/*",
                 "input": "apps/electron-electron/src/",
-                "ignore": ["**/*.ts"],
+                "ignore": [
+                  "**/*.ts"
+                ],
                 "output": ""
               }
             ],
-            "styles": ["apps/gitbit/src/styles.scss"],
+            "styles": [
+              "apps/gitbit/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -212,7 +229,10 @@
               "libs/gitbit/tabmenu/feature/tsconfig.lib.json",
               "libs/gitbit/tabmenu/feature/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/gitbit/tabmenu/feature/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/tabmenu/feature/**"
+            ]
           }
         },
         "test": {
@@ -273,7 +293,9 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/gitbit/terminal/typings/tsconfig.lib.json"],
+            "tsConfig": [
+              "libs/gitbit/terminal/typings/tsconfig.lib.json"
+            ],
             "exclude": [
               "**/node_modules/**",
               "!libs/gitbit/terminal/typings/**"
@@ -296,8 +318,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/gitbit/tabmenu/typings/tsconfig.lib.json"],
-            "exclude": ["**/node_modules/**", "!libs/gitbit/tabmenu/typings/**"]
+            "tsConfig": [
+              "libs/gitbit/tabmenu/typings/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/tabmenu/typings/**"
+            ]
           }
         }
       },
@@ -316,8 +343,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/gitbit/routing/typings/tsconfig.lib.json"],
-            "exclude": ["**/node_modules/**", "!libs/gitbit/routing/typings/**"]
+            "tsConfig": [
+              "libs/gitbit/routing/typings/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/routing/typings/**"
+            ]
           }
         }
       },
@@ -340,7 +372,10 @@
               "libs/gitbit/tree/feature/tsconfig.lib.json",
               "libs/gitbit/tree/feature/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/gitbit/tree/feature/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/tree/feature/**"
+            ]
           }
         },
         "test": {
@@ -371,7 +406,10 @@
               "libs/gitbit/git/data-access/tsconfig.lib.json",
               "libs/gitbit/git/data-access/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/gitbit/git/data-access/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/git/data-access/**"
+            ]
           }
         },
         "test": {
@@ -398,8 +436,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/gitbit/git/typings/tsconfig.lib.json"],
-            "exclude": ["**/node_modules/**", "!libs/gitbit/git/typings/**"]
+            "tsConfig": [
+              "libs/gitbit/git/typings/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/git/typings/**"
+            ]
           }
         }
       },
