@@ -34,6 +34,15 @@
     },
     "gitbit-routing-typings": {
       "tags": []
+    },
+    "gitbit-tree-feature": {
+      "tags": []
+    },
+    "gitbit-git-data-access": {
+      "tags": []
+    },
+    "gitbit-git-typings": {
+      "tags": []
     }
   }
 }
