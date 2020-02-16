@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TerminalService } from './terminal.service';
+import { SystemService } from './system.service';
 
-describe('TerminalService', () => {
+describe('SystemService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TerminalService = TestBed.get(TerminalService);
+    const service: SystemService = TestBed.get(SystemService);
     expect(service).toBeTruthy();
   });
 });

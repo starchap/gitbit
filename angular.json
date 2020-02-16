@@ -21,13 +21,8 @@
             "polyfills": "apps/gitbit/src/polyfills.ts",
             "tsConfig": "apps/gitbit/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/gitbit/src/favicon.ico",
-              "apps/gitbit/src/assets"
-            ],
-            "styles": [
-              "apps/gitbit/src/styles.scss"
-            ],
+            "assets": ["apps/gitbit/src/favicon.ico", "apps/gitbit/src/assets"],
+            "styles": ["apps/gitbit/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -86,10 +81,7 @@
               "apps/gitbit/tsconfig.app.json",
               "apps/gitbit/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/gitbit/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/gitbit/**"]
           }
         },
         "test": {
@@ -123,13 +115,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/gitbit-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/gitbit-e2e/**"
-            ]
+            "tsConfig": ["apps/gitbit-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/gitbit-e2e/**"]
           }
         }
       }
@@ -160,15 +147,11 @@
               {
                 "glob": "**/*",
                 "input": "apps/electron-electron/src/",
-                "ignore": [
-                  "**/*.ts"
-                ],
+                "ignore": ["**/*.ts"],
                 "output": ""
               }
             ],
-            "styles": [
-              "apps/gitbit/src/styles.scss"
-            ],
+            "styles": ["apps/gitbit/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -229,10 +212,7 @@
               "libs/gitbit/tabmenu/feature/tsconfig.lib.json",
               "libs/gitbit/tabmenu/feature/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/tabmenu/feature/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/gitbit/tabmenu/feature/**"]
           }
         },
         "test": {
@@ -241,65 +221,6 @@
             "jestConfig": "libs/gitbit/tabmenu/feature/jest.config.js",
             "tsConfig": "libs/gitbit/tabmenu/feature/tsconfig.spec.json",
             "setupFile": "libs/gitbit/tabmenu/feature/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "gitbit-terminal-data-access": {
-      "projectType": "library",
-      "root": "libs/gitbit/terminal/data-access",
-      "sourceRoot": "libs/gitbit/terminal/data-access/src",
-      "prefix": "gb",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/gitbit/terminal/data-access/tsconfig.lib.json",
-              "libs/gitbit/terminal/data-access/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/terminal/data-access/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/gitbit/terminal/data-access/jest.config.js",
-            "tsConfig": "libs/gitbit/terminal/data-access/tsconfig.spec.json",
-            "setupFile": "libs/gitbit/terminal/data-access/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "gitbit-terminal-typings": {
-      "projectType": "library",
-      "root": "libs/gitbit/terminal/typings",
-      "sourceRoot": "libs/gitbit/terminal/typings/src",
-      "prefix": "gb",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/gitbit/terminal/typings/tsconfig.lib.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/terminal/typings/**"
-            ]
           }
         }
       },
@@ -318,13 +239,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/gitbit/tabmenu/typings/tsconfig.lib.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/tabmenu/typings/**"
-            ]
+            "tsConfig": ["libs/gitbit/tabmenu/typings/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/tabmenu/typings/**"]
           }
         }
       },
@@ -343,13 +259,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/gitbit/routing/typings/tsconfig.lib.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/routing/typings/**"
-            ]
+            "tsConfig": ["libs/gitbit/routing/typings/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/routing/typings/**"]
           }
         }
       },
@@ -372,10 +283,7 @@
               "libs/gitbit/tree/feature/tsconfig.lib.json",
               "libs/gitbit/tree/feature/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/tree/feature/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/gitbit/tree/feature/**"]
           }
         },
         "test": {
@@ -406,10 +314,7 @@
               "libs/gitbit/git/data-access/tsconfig.lib.json",
               "libs/gitbit/git/data-access/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/git/data-access/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/gitbit/git/data-access/**"]
           }
         },
         "test": {
@@ -436,13 +341,62 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
+            "tsConfig": ["libs/gitbit/git/typings/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/git/typings/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-system-data-access": {
+      "projectType": "library",
+      "root": "libs/gitbit/system/data-access",
+      "sourceRoot": "libs/gitbit/system/data-access/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
             "tsConfig": [
-              "libs/gitbit/git/typings/tsconfig.lib.json"
+              "libs/gitbit/system/data-access/tsconfig.lib.json",
+              "libs/gitbit/system/data-access/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/gitbit/git/typings/**"
+              "!libs/gitbit/system/data-access/**"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/system/data-access/jest.config.js",
+            "tsConfig": "libs/gitbit/system/data-access/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/system/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-system-typings": {
+      "projectType": "library",
+      "root": "libs/gitbit/system/typings",
+      "sourceRoot": "libs/gitbit/system/typings/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/gitbit/system/typings/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/system/typings/**"]
           }
         }
       },
