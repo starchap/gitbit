@@ -19,7 +19,8 @@
      [disabled]="tab.disabled || false"
      [routerLink]="tab.url"
      routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
+     [active]="rla.isActive"
+     [matTooltip]="tab.toolTip">
     <div class="with-icon fadein">
       <mat-icon matBadge="{{tab.numberIndicator}}"
                 matBadgeColor="warn"

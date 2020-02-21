@@ -6,6 +6,7 @@ export type ComponentNavigation = {
   url: string;
   numberIndicator?: number|0;
   disabled?: boolean;
+  toolTip?: string;
 }
 
 

@@ -10,7 +10,15 @@
         "index": 0
       },
       "enum": ["Gitbit", "Electron"],
-      "x-prompt": "What application are you generating for?"
+      "x-prompt": "(App): What application are you generating for?"
+    },
+    "libraryName": {
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 4
+      },
+      "x-prompt": "(LibName): Specify the name of the library you are generating for?"
     },
     "libraryType": {
       "type": "string",
@@ -19,7 +27,7 @@
         "index": 1
       },
       "enum": ["data-access", "library", "typings", "utils", "feature"],
-      "x-prompt": "What type of library are you generating for?"
+      "x-prompt": "(LibType): What type of library are you generating for?"
     },
     "type": {
       "type": "string",
@@ -28,7 +36,7 @@
         "index": 2
       },
       "enum": ["component", "service", "module", "library"],
-      "x-prompt": "What do you want to generate?"
+      "x-prompt": "(Type): What do you want to generate?"
     },
     "name": {
       "type": "string",
@@ -37,23 +45,7 @@
         "index": 3
       },
       "minLength": 1,
-      "x-prompt": "What do you want to generate?"
-    },
-    "libraryName": {
-      "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": 4
-      },
-      "x-prompt": "Specify the name of the library you are generating for? (Required for all except new libraries)"
-    },
-    "route": {
-      "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": 5
-      },
-      "x-prompt": "Specify parent routing module? (Required when generating new features)"
+      "x-prompt": "Enter a name or path for the generated element (Default Path: Libs/<LibName>/<LibType>/src/lib/<name|path>)"
     }
   },
   "required": ["name"]

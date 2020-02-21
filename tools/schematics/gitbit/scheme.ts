@@ -13,23 +13,27 @@ export type Schematic = {
   type: string;
   name: string;
   libraryName: string;
-  route: string;
 }
 
 export const getApplicationData = {
-  Gitbit: { prefix: 'gb', name: 'GitBit', defaultPath: '', collection: '@nrwl/angular' },
-  Electron: { prefix: 'ejs', name: 'Electron', defaultPath: '', collection: '@nrwl/angular' }
+  Gitbit: { prefix: 'gb', name: 'GitBit', defaultPath: '' },
+  Electron: { prefix: 'ejs', name: 'Electron', defaultPath: '' }
 };
 
 export const getTemplates: (schema: Schematic) => {} = (schema: Schematic) => {
   return {
-    'library': [
-    ],
-    'component': [
-    ],
-    'service': [
-    ]
+    'library': [],
+    'component': [],
+    'service': [],
+    'module': []
   };
+};
+
+export const getCollection = {
+  library: '@nrwl/angular',
+  component: '@nrwl/angular',
+  service: '@nrwl/angular',
+  module: '@nrwl/angular'
 };
 
 export const getSchemeData: (schema: Schematic) => {} = (schema: Schematic) => {
@@ -45,18 +49,25 @@ export const getSchemeData: (schema: Schematic) => {} = (schema: Schematic) => {
       name: schema.name,
       unitTestRunner: schema.libraryType === 'typings' ? 'none' : 'jest',
       prefix: getApplicationData[schema.app].prefix,
-      project: arrPath(dasherize,'-',schema.app, schema.libraryName, schema.libraryType),
+      project: arrPath(dasherize, '-', schema.app, schema.libraryName, schema.libraryType),
+      style: 'scss'
+    },
+    module: {
+      name: schema.name,
+      unitTestRunner: schema.libraryType === 'typings' ? 'none' : 'jest',
+      prefix: getApplicationData[schema.app].prefix,
+      project: arrPath(dasherize, '-', schema.app, schema.libraryName, schema.libraryType),
       style: 'scss'
     },
     service: {
-      name: [schema.name,schema.name].join('/'),
+      name: [schema.name, schema.name].join('/'),
       unitTestRunner: schema.libraryType === 'typings' ? 'none' : 'jest',
       prefix: getApplicationData[schema.app].prefix,
-      project: arrPath(dasherize,'-',schema.app, schema.libraryName, schema.libraryType)
+      project: arrPath(dasherize, '-', schema.app, schema.libraryName, schema.libraryType)
     }
   };
 };
 
-export function arrPath(strUtil:(string) => string, split: string, ...strPath: string[]):string {
-  return strPath? strPath.filter(Boolean).map(strUtil).join(split): '';
+export function arrPath(strUtil: (string) => string, split: string, ...strPath: string[]): string {
+  return strPath ? strPath.filter(Boolean).map(strUtil).join(split) : '';
 }

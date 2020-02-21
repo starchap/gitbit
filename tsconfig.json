@@ -60,7 +60,12 @@
       "@gitbit/gitbit/setting/feature": [
         "libs/gitbit/setting/feature/src/index.ts"
       ],
-      "@gitbit/gitbit/stash/feature": ["libs/gitbit/stash/feature/src/index.ts"]
+      "@gitbit/gitbit/stash/feature": [
+        "libs/gitbit/stash/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/projects/library": [
+        "libs/gitbit/projects/library/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

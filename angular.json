@@ -699,6 +699,40 @@
           "styleext": "scss"
         }
       }
+    },
+    "gitbit-projects-library": {
+      "projectType": "library",
+      "root": "libs/gitbit/projects/library",
+      "sourceRoot": "libs/gitbit/projects/library/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/projects/library/tsconfig.lib.json",
+              "libs/gitbit/projects/library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/projects/library/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/projects/library/jest.config.js",
+            "tsConfig": "libs/gitbit/projects/library/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/projects/library/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
