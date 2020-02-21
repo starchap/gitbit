@@ -5,6 +5,7 @@ export type ComponentNavigation = {
   title: string;
   url: string;
   numberIndicator?: number|0;
+  disabled?: boolean;
 }
 
 

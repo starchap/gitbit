@@ -35,7 +35,32 @@
       ],
       "@gitbit/gitbit/system/typings": [
         "libs/gitbit/system/typings/src/index.ts"
-      ]
+      ],
+      "@gitbit/gitbit/dashboard/feature": [
+        "libs/gitbit/dashboard/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/commit/feature": [
+        "libs/gitbit/commit/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/conflict/feature": [
+        "libs/gitbit/conflict/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/terminal/library": [
+        "libs/gitbit/terminal/library/src/index.ts"
+      ],
+      "@gitbit/gitbit/terminal/feature": [
+        "libs/gitbit/terminal/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/merge/feature": [
+        "libs/gitbit/merge/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/projects/feature": [
+        "libs/gitbit/projects/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/setting/feature": [
+        "libs/gitbit/setting/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/stash/feature": ["libs/gitbit/stash/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

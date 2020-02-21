@@ -8,6 +8,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { GitbitRoutingModule } from '@gitbit/gitbit/routing/typings';
+import { GitbitTerminalLibraryModule } from '@gitbit/gitbit/terminal/library';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { GitbitRoutingModule } from '@gitbit/gitbit/routing/typings';
     MatToolbarModule,
     MatBadgeModule,
     MatButtonModule,
-    GitbitRoutingModule
+    GitbitRoutingModule,
+    GitbitTerminalLibraryModule
   ],
   exports: [TabmenuComponent],
   declarations: [TabmenuComponent]

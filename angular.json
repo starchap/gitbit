@@ -405,6 +405,300 @@
           "styleext": "scss"
         }
       }
+    },
+    "gitbit-dashboard-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/dashboard/feature",
+      "sourceRoot": "libs/gitbit/dashboard/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/dashboard/feature/tsconfig.lib.json",
+              "libs/gitbit/dashboard/feature/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/dashboard/feature/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/dashboard/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/dashboard/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/dashboard/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-commit-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/commit/feature",
+      "sourceRoot": "libs/gitbit/commit/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/commit/feature/tsconfig.lib.json",
+              "libs/gitbit/commit/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/commit/feature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/commit/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/commit/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/commit/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-conflict-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/conflict/feature",
+      "sourceRoot": "libs/gitbit/conflict/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/conflict/feature/tsconfig.lib.json",
+              "libs/gitbit/conflict/feature/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/conflict/feature/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/conflict/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/conflict/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/conflict/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-terminal-library": {
+      "projectType": "library",
+      "root": "libs/gitbit/terminal/library",
+      "sourceRoot": "libs/gitbit/terminal/library/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/terminal/library/tsconfig.lib.json",
+              "libs/gitbit/terminal/library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/terminal/library/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/terminal/library/jest.config.js",
+            "tsConfig": "libs/gitbit/terminal/library/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/terminal/library/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-terminal-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/terminal/feature",
+      "sourceRoot": "libs/gitbit/terminal/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/terminal/feature/tsconfig.lib.json",
+              "libs/gitbit/terminal/feature/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/terminal/feature/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/terminal/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/terminal/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/terminal/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-merge-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/merge/feature",
+      "sourceRoot": "libs/gitbit/merge/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/merge/feature/tsconfig.lib.json",
+              "libs/gitbit/merge/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/merge/feature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/merge/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/merge/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/merge/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-projects-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/projects/feature",
+      "sourceRoot": "libs/gitbit/projects/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/projects/feature/tsconfig.lib.json",
+              "libs/gitbit/projects/feature/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/projects/feature/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/projects/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/projects/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/projects/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-setting-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/setting/feature",
+      "sourceRoot": "libs/gitbit/setting/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/setting/feature/tsconfig.lib.json",
+              "libs/gitbit/setting/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/setting/feature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/setting/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/setting/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/setting/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-stash-feature": {
+      "projectType": "library",
+      "root": "libs/gitbit/stash/feature",
+      "sourceRoot": "libs/gitbit/stash/feature/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/stash/feature/tsconfig.lib.json",
+              "libs/gitbit/stash/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/gitbit/stash/feature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/stash/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/stash/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/stash/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

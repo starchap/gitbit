@@ -43,6 +43,33 @@
     },
     "gitbit-system-typings": {
       "tags": []
+    },
+    "gitbit-dashboard-feature": {
+      "tags": []
+    },
+    "gitbit-commit-feature": {
+      "tags": []
+    },
+    "gitbit-conflict-feature": {
+      "tags": []
+    },
+    "gitbit-terminal-library": {
+      "tags": []
+    },
+    "gitbit-terminal-feature": {
+      "tags": []
+    },
+    "gitbit-merge-feature": {
+      "tags": []
+    },
+    "gitbit-projects-feature": {
+      "tags": []
+    },
+    "gitbit-setting-feature": {
+      "tags": []
+    },
+    "gitbit-stash-feature": {
+      "tags": []
     }
   }
 }

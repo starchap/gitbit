@@ -16,15 +16,14 @@ export class TabmenuComponent implements OnInit {
   tabs: ComponentNavigation[] = [];
   constructor() {
     this.tabs = [
+      {icon: 'list', title: 'Repositories', url: 'projects'},
       {icon: 'dashboard', title: 'Dashboard', url: 'dashboard'},
       {icon: 'account_tree', title: 'Git Tree', url: 'tree'},
       {icon: 'beenhere', title: 'Commit', url: 'commit', numberIndicator: 3},
-      {icon: 'save', title: 'Stashed', url: 'stashed'},
+      {icon: 'save', title: 'Stashed', url: 'stash'},
       {icon: 'call_merge', title: 'Merge', url: 'merge'},
-      {icon: 'linear_scale', title: 'Rebase', url: 'rebase'},
-      {icon: 'error_outline', title: 'Conflicts', url: 'conflicts', numberIndicator: 15},
-      {icon: 'assignment', title: 'Assignments', url: 'assignments'},
-      {icon: 'web_asset', title: 'Console', url: 'console'}
+      {icon: 'error_outline', title: 'Conflicts', url: 'conflict', numberIndicator: 15},
+      {icon: 'web_asset', title: 'Terminal', url: 'terminal'}
     ]
   }
 

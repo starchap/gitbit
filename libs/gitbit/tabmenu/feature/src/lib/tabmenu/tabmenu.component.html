@@ -4,7 +4,7 @@
     <mat-icon class="example-tab-icon">redo</mat-icon>
     <span>Issue-123-making-gitbit</span>
     <span class="example-spacer"></span>
-    <button mat-button>
+    <button mat-button routerLink="setting">
       <mat-icon class="example-icon" aria-hidden="false" aria-label="GitBit Settings">settings_applications</mat-icon>
     </button>
     <button mat-button>
@@ -16,6 +16,7 @@
 <nav mat-tab-nav-bar mat-align-tabs="center">
   <a mat-tab-link
      *ngFor="let tab of tabs"
+     [disabled]="tab.disabled || false"
      [routerLink]="tab.url"
      routerLinkActive #rla="routerLinkActive"
      [active]="rla.isActive">
@@ -30,6 +31,7 @@
     </div>
   </a>
 </nav>
-<div [@routeAnimations]="prepareRoute(outlet)">
+<div [@routeAnimations]="prepareRoute(outlet)" class="container">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
+<gb-small-terminal></gb-small-terminal>

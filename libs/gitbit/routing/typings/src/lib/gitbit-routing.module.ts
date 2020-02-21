@@ -23,11 +23,39 @@ const routes: Routes = [
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
-    component: TempComponent1
+    loadChildren: () => import('@gitbit/gitbit/dashboard/feature').then(module => module.GitbitDashboardFeatureModule)
   },
   {
     path: 'tree',
     loadChildren: () => import('@gitbit/gitbit/tree/feature').then(module => module.GitbitTreeFeatureModule)
+  },
+  {
+    path: 'merge',
+    loadChildren: () => import('@gitbit/gitbit/merge/feature').then(module => module.GitbitMergeFeatureModule)
+  },
+  {
+    path: 'commit',
+    loadChildren: () => import('@gitbit/gitbit/commit/feature').then(module => module.GitbitCommitFeatureModule)
+  },
+  {
+    path: 'conflict',
+    loadChildren: () => import('@gitbit/gitbit/conflict/feature').then(module => module.GitbitConflictFeatureModule)
+  },
+  {
+    path: 'projects',
+    loadChildren: () => import('@gitbit/gitbit/projects/feature').then(module => module.GitbitProjectsFeatureModule)
+  },
+  {
+    path: 'terminal',
+    loadChildren: () => import('@gitbit/gitbit/terminal/feature').then(module => module.GitbitTerminalFeatureModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('@gitbit/gitbit/setting/feature').then(module => module.GitbitSettingFeatureModule)
+  },
+  {
+    path: 'stash',
+    loadChildren: () => import('@gitbit/gitbit/stash/feature').then(module => module.GitbitStashFeatureModule)
   }
 ]
 
