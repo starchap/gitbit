@@ -1,7 +1,16 @@
-import { app, BrowserWindow, ipcMain, screen, IpcMessageEvent } from 'electron';
+import { app, BrowserWindow, ipcMain, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 import { exec } from 'child_process';
+import {
+  ElectronBridge,
+  ElectronCommand,
+  ElectronDataElement, FileContent,
+  Terminal
+} from '../../../libs/gitbit/system/typings/src';
+import * as fs from 'fs';
+import ErrnoException = NodeJS.ErrnoException;
+import { Resolve } from '@angular/router';
 
 let serve;
 const args = process.argv.slice(1);
@@ -14,7 +23,7 @@ const isEnvSet = 'ELECTRON_IS_DEV' in process.env;
 const debugMode = isEnvSet
   ? getFromEnv
   : process.defaultApp ||
-    /node_modules[\\/]electron[\\/]/.test(process.execPath);
+  /node_modules[\\/]electron[\\/]/.test(process.execPath);
 
 /**
  * Electron window settings
@@ -127,7 +136,8 @@ try {
       createWindow();
     }
   });
-} catch (err) {}
+} catch (err) {
+}
 
 function quit() {
   if (process.platform !== 'darwin') {
@@ -136,25 +146,52 @@ function quit() {
 }
 
 /* tslint:disable */
-function initTerminalListener(){
-  ipcMain.handle('sync', async (event, arg) => {
-    return new Promise((resolve, reject) => {
-      exec(arg, (error, stdout, stderr) => {
-        if (error) {
-          console.warn(error);
-        }
-        resolve({Error: error, stdOut: stdout, stdErr: stderr});
-      });
+function initTerminalListener() {
+  ipcMain.handle(ElectronBridge, async (event, arg: ElectronDataElement<any>) => {
+    switch (arg.command) {
+      case ElectronCommand.TERMINAL:
+        return terminalCommand(arg.data);
+      case ElectronCommand.FILE_WRITE:
+        return writeFile(arg.data);
+      case ElectronCommand.FILE_READ:
+        return readFile(arg.data);
+      default:
+        return null;
+    }
+  });
+}
+
+function terminalCommand(terminalCommand: string): Promise<Terminal> {
+  return new Promise((resolve, reject) => {
+    exec(terminalCommand, (error: Error | null, stdOut: string, stdErr: string) => {
+      if (error) {
+        reject(error);
+      }
+      resolve({ error, stdOut, stdErr });
     });
   });
-
-/*  ipcMain.on('async', (event, arg) => {
-    exec(arg, (err: Error, stdout: string | Buffer, stderr: string | Buffer) => {
-      event.sender.send('asyncRes', {Error: err, stdOut: stdout, stdErr: stderr});
-      if(err){
-        return;
-      }
-    });
-  });*/
 }
+
+function readFile(path: string): Promise<FileContent> {
+  return new Promise<FileContent>((resolve, reject) => {
+    fs.readFile(path, 'utf8', function(error: ErrnoException, content: string) {
+      if (error) {
+        reject(error);
+      }
+      resolve({ error: !!error, content, path });
+    });
+  });
+}
+
+function writeFile(file: FileContent): Promise<boolean> {
+  return new Promise<boolean>((resolve, reject) => {
+    fs.writeFile(file.path, file.content, { encoding: 'utf8' }, (error: ErrnoException) => {
+      if (error) {
+        reject(error);
+      }
+      resolve(!error);
+    });
+  });
+}
+
 /* tslint:enable */

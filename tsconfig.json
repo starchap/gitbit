@@ -19,12 +19,6 @@
       "@gitbit/gitbit/tabmenu/feature": [
         "libs/gitbit/tabmenu/feature/src/index.ts"
       ],
-      "@gitbit/gitbit/terminal/data-access": [
-        "libs/gitbit/terminal/data-access/src/index.ts"
-      ],
-      "@gitbit/gitbit/terminal/typings": [
-        "libs/gitbit/terminal/typings/src/index.ts"
-      ],
       "@gitbit/gitbit/tabmenu/typings": [
         "libs/gitbit/tabmenu/typings/src/index.ts"
       ],
@@ -35,7 +29,13 @@
       "@gitbit/gitbit/git/data-access": [
         "libs/gitbit/git/data-access/src/index.ts"
       ],
-      "@gitbit/gitbit/git/typings": ["libs/gitbit/git/typings/src/index.ts"]
+      "@gitbit/gitbit/git/typings": ["libs/gitbit/git/typings/src/index.ts"],
+      "@gitbit/gitbit/system/data-access": [
+        "libs/gitbit/system/data-access/src/index.ts"
+      ],
+      "@gitbit/gitbit/system/typings": [
+        "libs/gitbit/system/typings/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

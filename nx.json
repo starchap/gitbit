@@ -23,12 +23,6 @@
     "gitbit-tabmenu-feature": {
       "tags": []
     },
-    "gitbit-terminal-data-access": {
-      "tags": []
-    },
-    "gitbit-terminal-typings": {
-      "tags": []
-    },
     "gitbit-tabmenu-typings": {
       "tags": []
     },
@@ -42,6 +36,12 @@
       "tags": []
     },
     "gitbit-git-typings": {
+      "tags": []
+    },
+    "gitbit-system-data-access": {
+      "tags": []
+    },
+    "gitbit-system-typings": {
       "tags": []
     }
   }

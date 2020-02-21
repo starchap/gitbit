@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TerminalService } from '@gitbit/gitbit/terminal/data-access';
-import { Terminal } from '@gitbit/gitbit/terminal/typings';
 import { FlatBranch, getGitCommand, GitCommands, GitLogFormat } from '@gitbit/gitbit/git/typings';
+import { SystemService } from '@gitbit/gitbit/system/data-access';
+import { Terminal } from '@gitbit/gitbit/system/typings';
 
 export type JSONFlatBranch = {
   branchName: string,
@@ -18,11 +18,11 @@ export type JSONFlatBranch = {
 export class GitService {
   newline: string = '\n';
 
-  constructor(private terminal: TerminalService) {
+  constructor(private systemService: SystemService) {
   }
 
   showAllBranches(): Promise<string[]> {
-    return this.terminal.exec(GitCommands.GIT_BRANCH_LOCAL).then(
+    return this.systemService.terminal(GitCommands.GIT_BRANCH_LOCAL).then(
       (terminal: Terminal) => {
         return (terminal.stdOut as string).replace(/\'/g, '').split(this.newline);
       }
@@ -47,7 +47,7 @@ export class GitService {
   }
 
   prepareGitLog(): Promise<string> {
-    return this.terminal.exec(getGitCommand(GitCommands.GIT_LOG, GitLogFormat)).then(
+    return this.systemService.terminal(getGitCommand(GitCommands.GIT_LOG, GitLogFormat)).then(
       (terminal: Terminal) => {
         return (terminal.stdOut as string).replace(/\n/g, ',');
       }
