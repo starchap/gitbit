@@ -5,7 +5,7 @@ import {
   underscore
 } from '@angular-devkit/core/src/utils/strings';
 
-export const stringUtils = { classify, dasherize, camelize, underscore };
+export const stringUtils: Record<string, (string) => string> = { classify, dasherize, camelize, underscore };
 
 export type Schematic = {
   app: string;
@@ -15,7 +15,8 @@ export type Schematic = {
   libraryName: string;
 }
 
-export const getApplicationData = {
+type ApplicationData = { prefix: string, name: string, defaultPath: string }
+export const getApplicationData: Record<string, ApplicationData> = {
   Gitbit: { prefix: 'gb', name: 'GitBit', defaultPath: '' },
   Electron: { prefix: 'ejs', name: 'Electron', defaultPath: '' }
 };
@@ -29,14 +30,15 @@ export const getTemplates: (schema: Schematic) => {} = (schema: Schematic) => {
   };
 };
 
-export const getCollection = {
+export const getCollection: Record<string, string> = {
   library: '@nrwl/angular',
   component: '@nrwl/angular',
   service: '@nrwl/angular',
   module: '@nrwl/angular'
 };
 
-export const getSchemeData: (schema: Schematic) => {} = (schema: Schematic) => {
+type SchemeData = {name: string, unitTestRunner: string, prefix: string, project?: string, projectType?: string, style?: string}
+export const getSchemeData: (schema: Schematic) => Record<string, SchemeData> = (schema: Schematic) => {
   return {
     library: {
       name: [schema.app, schema.name, schema.libraryType].filter(Boolean).join('/'),
