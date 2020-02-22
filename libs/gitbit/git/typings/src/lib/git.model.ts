@@ -18,18 +18,18 @@ export enum GitLogFormat {
   branchId = "%H",
   parentIds = "%P",
   branchName = "%D",
-  message = "%s",
+  message = "%f",
   time = "%cd"
 }
 export type FlatBranch = {
   branchName: string,
   branchId: string,
-  parentIds: parent[],
+  parentIds: BranchParent[],
   time: string,
   author: string,
   message: string
 }
 
-export type parent = {
+export type BranchParent = {
   id: string
 }
