@@ -16,7 +16,7 @@ export class TabmenuComponent implements OnInit {
   tabs: ComponentNavigation[] = [];
   constructor() {
     this.tabs = [
-      {icon: 'list', title: 'Repositories', url: 'projects', toolTip: 'Pick or add repository'},
+      {icon: 'list', title: 'Repositories', url: 'repository', toolTip: 'Pick or add repository'},
       {icon: 'dashboard', title: 'Dashboard', url: 'dashboard', toolTip: 'Quick commands and information'},
       {icon: 'account_tree', title: 'Git Tree', url: 'tree', toolTip: 'See repository history'},
       {icon: 'beenhere', title: 'Commit', url: 'commit', numberIndicator: 3, toolTip: 'Commit to current work'},

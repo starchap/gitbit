@@ -54,17 +54,17 @@
       "@gitbit/gitbit/merge/feature": [
         "libs/gitbit/merge/feature/src/index.ts"
       ],
-      "@gitbit/gitbit/projects/feature": [
-        "libs/gitbit/projects/feature/src/index.ts"
-      ],
       "@gitbit/gitbit/setting/feature": [
         "libs/gitbit/setting/feature/src/index.ts"
       ],
       "@gitbit/gitbit/stash/feature": [
         "libs/gitbit/stash/feature/src/index.ts"
       ],
-      "@gitbit/gitbit/projects/library": [
-        "libs/gitbit/projects/library/src/index.ts"
+      "@gitbit/gitbit/repository/feature": [
+        "libs/gitbit/repository/feature/src/index.ts"
+      ],
+      "@gitbit/gitbit/repository/library": [
+        "libs/gitbit/repository/library/src/index.ts"
       ]
     }
   },

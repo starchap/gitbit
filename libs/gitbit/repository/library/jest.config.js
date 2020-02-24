@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'gitbit-projects-feature',
+  name: 'gitbit-repository-library',
   preset: '../../../../jest.config.js',
-  coverageDirectory: '../../../../coverage/libs/gitbit/projects/feature',
+  coverageDirectory: '../../../../coverage/libs/gitbit/repository/library',
   snapshotSerializers: [
     'jest-preset-angular/AngularSnapshotSerializer.js',
     'jest-preset-angular/HTMLCommentSerializer.js'

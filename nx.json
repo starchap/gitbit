@@ -15,64 +15,67 @@
       "tags": []
     },
     "gitbit": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:app", "type:app"]
     },
     "electron-electron": {
-      "tags": []
+      "tags": ["app:electron", "scope:app", "type:app"]
     },
     "gitbit-tabmenu-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:tabmenu", "type:feature"]
     },
     "gitbit-tabmenu-typings": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:tabmenu", "type:typings"]
     },
     "gitbit-routing-typings": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:routing", "type:typings"]
     },
     "gitbit-tree-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:tree", "type:feature"]
     },
     "gitbit-git-data-access": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:git", "type:data-access"]
     },
     "gitbit-git-typings": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:git", "type:typings"]
     },
     "gitbit-system-data-access": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:system", "type:data-access"]
     },
     "gitbit-system-typings": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:system", "type:typings"]
     },
     "gitbit-dashboard-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:dashboard", "type:feature"]
     },
     "gitbit-commit-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:commit", "type:feature"]
     },
     "gitbit-conflict-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:conflict", "type:feature"]
     },
     "gitbit-terminal-library": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:terminal", "type:library"]
     },
     "gitbit-terminal-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:terminal", "type:feature"]
     },
     "gitbit-merge-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:merge", "type:feature"]
     },
     "gitbit-projects-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:projects", "type:feature"]
     },
     "gitbit-setting-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:setting", "type:feature"]
     },
     "gitbit-stash-feature": {
-      "tags": []
+      "tags": ["app:gitbit", "scope:stash", "type:feature"]
     },
-    "gitbit-projects-library": {
-      "tags": []
+    "gitbit-repository-feature": {
+      "tags": ["app:gitbit", "scope:repository", "type:feature"]
+    },
+    "gitbit-repository-library": {
+      "tags": ["app:gitbit", "scope:repository", "type:library"]
     }
   }
 }

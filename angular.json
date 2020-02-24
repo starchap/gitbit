@@ -604,40 +604,6 @@
         }
       }
     },
-    "gitbit-projects-feature": {
-      "projectType": "library",
-      "root": "libs/gitbit/projects/feature",
-      "sourceRoot": "libs/gitbit/projects/feature/src",
-      "prefix": "gb",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/gitbit/projects/feature/tsconfig.lib.json",
-              "libs/gitbit/projects/feature/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/gitbit/projects/feature/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/gitbit/projects/feature/jest.config.js",
-            "tsConfig": "libs/gitbit/projects/feature/tsconfig.spec.json",
-            "setupFile": "libs/gitbit/projects/feature/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
     "gitbit-setting-feature": {
       "projectType": "library",
       "root": "libs/gitbit/setting/feature",
@@ -700,31 +666,65 @@
         }
       }
     },
-    "gitbit-projects-library": {
+    "gitbit-repository-feature": {
       "projectType": "library",
-      "root": "libs/gitbit/projects/library",
-      "sourceRoot": "libs/gitbit/projects/library/src",
+      "root": "libs/gitbit/repository/feature",
+      "sourceRoot": "libs/gitbit/repository/feature/src",
       "prefix": "gb",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/gitbit/projects/library/tsconfig.lib.json",
-              "libs/gitbit/projects/library/tsconfig.spec.json"
+              "libs/gitbit/repository/feature/tsconfig.lib.json",
+              "libs/gitbit/repository/feature/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/gitbit/projects/library/**"
+              "!libs/gitbit/repository/feature/**"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/gitbit/projects/library/jest.config.js",
-            "tsConfig": "libs/gitbit/projects/library/tsconfig.spec.json",
-            "setupFile": "libs/gitbit/projects/library/src/test-setup.ts"
+            "jestConfig": "libs/gitbit/repository/feature/jest.config.js",
+            "tsConfig": "libs/gitbit/repository/feature/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/repository/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "gitbit-repository-library": {
+      "projectType": "library",
+      "root": "libs/gitbit/repository/library",
+      "sourceRoot": "libs/gitbit/repository/library/src",
+      "prefix": "gb",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/gitbit/repository/library/tsconfig.lib.json",
+              "libs/gitbit/repository/library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/gitbit/repository/library/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/gitbit/repository/library/jest.config.js",
+            "tsConfig": "libs/gitbit/repository/library/tsconfig.spec.json",
+            "setupFile": "libs/gitbit/repository/library/src/test-setup.ts"
           }
         }
       },

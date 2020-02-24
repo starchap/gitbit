@@ -42,8 +42,8 @@ const routes: Routes = [
     loadChildren: () => import('@gitbit/gitbit/conflict/feature').then(module => module.GitbitConflictFeatureModule)
   },
   {
-    path: 'projects',
-    loadChildren: () => import('@gitbit/gitbit/projects/feature').then(module => module.GitbitProjectsFeatureModule)
+    path: 'repository',
+    loadChildren: () => import('@gitbit/gitbit/repository/feature').then(module => module.GitbitRepositoryFeatureModule)
   },
   {
     path: 'terminal',
