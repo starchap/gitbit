@@ -1,0 +1,10 @@
+.flex-container{
+  display: flex;
+}
+.container{
+  width: 30%;
+  padding: 10px;
+}
+.container:last-child{
+  width: 100%;
+}

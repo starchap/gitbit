@@ -1,0 +1,9 @@
+<div>
+<div class="inline-flex">
+  <mat-icon>{{hasChildren?'folder':'cloud'}}</mat-icon>
+  <p>1</p>
+</div>
+<div class="inline-flex children" *ngIf="hasChildren">
+  <gb-repository-branch-list-item [hasChildren]="false"></gb-repository-branch-list-item>
+</div>
+</div>
